@@ -19,41 +19,61 @@ namespace AlertToCareAPITest.RepoTest
         }
         private void InitializeDatabase(DataContext context)
         {
+            var Layout1 = new Layout
+            {
+                LayoutId="L001",
+                LayoutName="Rectangular"
+            };
+            context.Add(Layout1);
+            var Icu1 = new Icu
+            {
+                Id = "ICU001",
+                BedCount = 12,
+                LayoutId = "L001"
+            };
+            context.Add(Icu1);
+            var Icu2 = new Icu
+            {
+                Id = "ICU002",
+                BedCount = 10,
+                LayoutId = "L002"
+            };
+            context.Add(Icu2);
             var Bed1 = new Bed
             {
-               // Id = "B002",
-                IcuId = "ICU004",
+                Id = 1,
+                BedNo="B001",
+                IcuId = "ICU001",
                 IsOccupied = true
             };
             context.Add(Bed1);
-
-            var Icu1 = new Icu
+            var Bed2 = new Bed
             {
-                Id = "ICU002",
-                BedCount = 4,
-                LayoutId = "L002"
+                Id = 2,
+                BedNo = "B002",
+                IcuId = "ICU001",
+                IsOccupied = true
             };
-            context.Add(Icu1);
-
+            context.Add(Bed2);
             var _Patient = new Patient
             {
-                Id = "P02",
+                Id = "P01",
                 PatientName = "Raj",
                 Age = 24,
-                IcuId = "ICU002",
-                BedId = "B002",
-                ContantNumber = "1234"
+                IcuId = "ICU001",
+                BedId = "B001",
+                ContantNumber = "9876543210"
             };
             context.Add(_Patient);
 
             var _Patient2 = new Patient
             {
-                Id = "P04",
+                Id = "P02",
                 PatientName = "Sam",
                 Age = 24,
-                IcuId = "ICU003",
+                IcuId = "ICU001",
                 BedId = "B002",
-                ContantNumber = "1234"
+                ContantNumber = "9876510937"
             };
             context.Add(_Patient2);
 

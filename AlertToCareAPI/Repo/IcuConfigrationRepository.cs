@@ -54,7 +54,7 @@ namespace AlertToCareAPI.Repo
             string IcuId = Icuid;
 
 
-            if(_context.IcusInfo.Find(IcuId)!=null)
+            if(CheckIcuIdAndBedCountIsValid(IcuId,BedCount))
             {
                 Bed configurebeds;
 
@@ -80,6 +80,21 @@ namespace AlertToCareAPI.Repo
                 return false;
             }
             
+        }
+        private bool CheckIcuIdAndBedCountIsValid(string IcuId,int BedCount)
+        {
+            var IcuList=_context.IcusInfo.ToList();
+            try
+            {
+                IcuList.First(Icu => Icu.Id == IcuId && Icu.BedCount == BedCount);
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+            
+
         }
         public bool CheckLayoutId(string Layoutid)
         {

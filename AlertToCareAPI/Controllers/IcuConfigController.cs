@@ -19,15 +19,15 @@ namespace AlertToCareAPI.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Models.Icu>> GetAllIcus()
+        public IEnumerable<Models.Icu> GetAllIcus()
         {
             var ICUs = _repository.GetAllIcus();
 
-            return Ok(ICUs);
+            return ICUs;
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Models.Icu> GetSpecificIcu(string id)
+        public ActionResult GetSpecificIcu(string id)
         {
             //return _repository.GetIcuById(id);
             Models.Icu icu = _repository.GetIcuById(id);
@@ -111,11 +111,17 @@ namespace AlertToCareAPI.Controllers
         [HttpPost("{IcuId}/{BedCount}")]
         public ActionResult AddBeds(string IcuId,int BedCount)
         {
+             bool response=_repository.ConfigureBeds(IcuId,BedCount);
+            if(response==true)
+            {
+                _repository.SaveChanges();
+                return Ok();
+            }
+            else
+            {
+                return BadRequest("Invalid IcuId and BedCount Entered");
+            }
            
-            
-            bool response=_repository.ConfigureBeds(IcuId,BedCount);
-            _repository.SaveChanges();
-            return Ok();
         }
 
     }

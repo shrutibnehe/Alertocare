@@ -585,7 +585,6 @@ C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\bin\De
 C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\obj\Debug\netcoreapp3.1\AlertToCareAPITest.csprojAssemblyReference.cache
 C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\obj\Debug\netcoreapp3.1\AlertToCareAPITest.AssemblyInfoInputs.cache
 C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\obj\Debug\netcoreapp3.1\AlertToCareAPITest.AssemblyInfo.cs
-C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\obj\Debug\netcoreapp3.1\AlertToCareAPITest.csproj.CoreCompileInputs.cache
 C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\obj\Debug\netcoreapp3.1\AlertToCareAPITest.csproj.CopyComplete
 C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\obj\Debug\netcoreapp3.1\AlertToCareAPITest.dll
 C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\obj\Debug\netcoreapp3.1\AlertToCareAPITest.pdb
@@ -599,3 +598,5 @@ C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\bin\De
 C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\netstandard2.1\SQLite.Interop.dll
 C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\netstandard2.0\SQLite.Interop.dll
 C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\netstandard2.1\SQLite.Interop.dll
+C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareAPITest\obj\Debug\netcoreapp3.1\AlertToCareAPITest.csproj.CoreCompileInputs.cache

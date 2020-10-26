@@ -1,5 +1,7 @@
-﻿using AlertToCareAPI.Models;
+﻿using AlertToCareAPI.Database;
+using AlertToCareAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,7 @@ namespace AlertToCareAPI.Utility
 {
     public class Validations_Icu
     {
+        DataContext _context;
         public bool ValidateIcu(Icu icu)
         {
             
@@ -20,6 +23,6 @@ namespace AlertToCareAPI.Utility
             return true;
            
         }
-       
+        
     }
 }

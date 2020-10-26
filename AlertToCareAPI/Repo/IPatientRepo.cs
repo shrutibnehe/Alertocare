@@ -8,10 +8,13 @@ namespace AlertToCare.Data
         bool SaveChanges();
 
         Patient GetPatientById(string id);
-        public void AddNewPatient(Patient patient);
+        public bool AddNewPatient(Patient patient);
         public void RemovePatient(Patient patient);
         public void UpdatePatient(Patient patient);
         IEnumerable<Patient> GetDetailsOfAllPatients();
+        IEnumerable<Bed> GetAvailableBeds();
+        IEnumerable<Bed> GetSpecificIcuAvailableBeds(string IcuId);
+        public bool CheckIcuExists(string IcuId);
 
     }
 }

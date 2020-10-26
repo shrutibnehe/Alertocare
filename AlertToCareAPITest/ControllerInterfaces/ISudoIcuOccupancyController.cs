@@ -7,7 +7,8 @@ using AlertToCareAPI.Repo;
 
 namespace AlertToCareAPITest.ControllerInterfaces
 {
-    class ISudoIcuOccupancyController : IPatientRepo
+    class ISudoIcuOccupancyController 
+        //IPatientRepo
     {
         public void AddNewPatient(Patient patient)
         {

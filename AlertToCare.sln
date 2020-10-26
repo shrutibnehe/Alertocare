@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlertToCareAPI", "AlertToCareAPI\AlertToCareAPI.csproj", "{22346835-20FE-4BB1-B30F-8CA29CDBDDC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlertToCareAPITest", "AlertToCareAPITest\AlertToCareAPITest.csproj", "{C92B5428-00D6-423A-BCC6-4C914E1BB36B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlertToCareAPITest", "AlertToCareAPITest\AlertToCareAPITest.csproj", "{C92B5428-00D6-423A-BCC6-4C914E1BB36B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlertToCareTests", "AlertToCareTests\AlertToCareTests.csproj", "{0E2312A6-179C-4DAA-ACEE-FB3E4794EB0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C92B5428-00D6-423A-BCC6-4C914E1BB36B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C92B5428-00D6-423A-BCC6-4C914E1BB36B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C92B5428-00D6-423A-BCC6-4C914E1BB36B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E2312A6-179C-4DAA-ACEE-FB3E4794EB0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E2312A6-179C-4DAA-ACEE-FB3E4794EB0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E2312A6-179C-4DAA-ACEE-FB3E4794EB0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E2312A6-179C-4DAA-ACEE-FB3E4794EB0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,6 +4,7 @@ using AlertToCareAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
@@ -18,32 +19,88 @@ namespace AlertToCareAPI.Repo
             _context = context;
         }
 
-        public void AddNewPatient(Patient patient)
+        public bool AddNewPatient(Patient patient)
         {
-            if (patient == null)
+            /*if (patient == null)
             {
                 throw new ArgumentNullException(nameof(patient));
-            }
+            }*/
             //_context.BedsInfo.FromSqlRaw($"UPDATE BedsInfo SET IsOccupied = 1  WHERE BedNo = {patient.BedId} And IcuId={patient.IcuId}");
-            //_context.PatientsInfo.Add(patient);
-            //
-            updateStatusofBeds(patient.BedId,patient.IcuId);
-            _context.SaveChanges();
+            if (_context.PatientsInfo.Find(patient.Id) != null)
+            {
+
+                throw new SQLiteException(SQLiteErrorCode.Constraint_PrimaryKey, "Patient ID already exists");
+
+            }
+            Bed ValidBedResponse=CheckValidityofPatientDetails(patient);
+            if (ValidBedResponse == null)
+            {
+                return false;
+
+            }
+            else
+            {
+                _context.PatientsInfo.Add(patient);
+                _context.SaveChanges();
+                ChangeStatus(ValidBedResponse, true);
+                return true;
+            }
+
+        }
+
+        private Bed CheckValidityofPatientDetails(Patient patient)
+        {
+            Bed ValidBed=CheckIfBedAndIcuExists(patient);
+           if(ValidBed!=null)
+            {
+                if(ValidBed.IsOccupied==false)
+                {
+                    return ValidBed;
+                }
+                return null;
+            }
+            return null;
+           
+           
+           
+           
+        }
+        private Bed CheckIfBedAndIcuExists(Patient patient)
+        {
+            var BedsList = _context.BedsInfo.ToList();
+            try
+            {
+                var result = BedsList.First(item => item.BedNo == patient.BedId && item.IcuId == patient.IcuId);
+                return result;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
 
 
         }
-        public void updateStatusofBeds(string BedId,string IcuId)
+
+
+        /* public void updateStatusofBeds(string BedId,string IcuId)
+         {
+        // _context.BedsInfo.FromSqlRaw($"UPDATE BedsInfo SET IsOccupied = {status}  WHERE BedNo = {BedId} And IcuId = {IcuId}");
+            var BedsList= _context.BedsInfo.ToList();
+            var result = BedsList.First(item => item.BedNo == BedId && item.IcuId == IcuId);
+            changeStatus(result, true);
+         }*/
+        public void ChangeStatus(Bed bed,bool status)
         {
-            int status = 1;
-            // _context.BedsInfo.FromSqlRaw($"UPDATE BedsInfo SET IsOccupied = {status}  WHERE BedNo = {BedId} And IcuId = {IcuId}");
-            _context.BedsInfo.FromSqlRaw("UPDATE BedsInfo SET IsOccupied = 1");
+            bed.IsOccupied = status;
+            _context.Update(bed);
             _context.SaveChanges();
+         
         }
 
         public IEnumerable<Patient> GetDetailsOfAllPatients()
         {
             var _patients = _context.PatientsInfo.ToList();
-
             return _patients;
         }
 
@@ -56,13 +113,16 @@ namespace AlertToCareAPI.Repo
 
         public void RemovePatient(Patient patient)
         {
-            if (patient == null)
-            {
-                throw new ArgumentNullException(nameof(patient));
-            }
+            /* if (patient == null)
+             {
+                 throw new ArgumentNullException(nameof(patient));
+             }*/
 
             //Make the bed occupied available then remove the patient
-            _context.BedsInfo.FromSqlRaw($"UPDATE BedsInfo SET IsOccupied = 0 WHERE Id = {patient.Id}");
+            // _context.BedsInfo.FromSqlRaw($"UPDATE BedsInfo SET IsOccupied = 0 WHERE Id = {patient.Id}");
+           var BedsList= _context.BedsInfo.ToList();
+            var result = BedsList.First(item => item.BedNo == patient.BedId && item.IcuId == patient.IcuId);
+            ChangeStatus(result, false);
             _context.PatientsInfo.Remove(patient);
         }
 
@@ -75,6 +135,49 @@ namespace AlertToCareAPI.Repo
         public void UpdatePatient(Patient patient)
         {
             //Nothing to do here
+        }
+
+        public IEnumerable<Bed> GetAvailableBeds()
+        {
+            var BedsList = _context.BedsInfo.ToList();
+            try
+            {
+                var AvailableBeds = BedsList.Where(bed => bed.IsOccupied == false);
+                return AvailableBeds;
+            }
+
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        public IEnumerable<Bed> GetSpecificIcuAvailableBeds(string IcuId)
+        { 
+            try
+            {
+                var BedsList = _context.BedsInfo.ToList();
+                var AvailableBeds = BedsList.Where(bed => bed.IsOccupied == false && bed.IcuId==IcuId);
+                return AvailableBeds;
+            }
+
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        public bool CheckIcuExists(string IcuId)
+        {
+            try
+            {
+                var BedsList = _context.BedsInfo.ToList();
+                var AvailableBeds = BedsList.First(item => item.IcuId == IcuId);
+                return true;
+            }
+
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

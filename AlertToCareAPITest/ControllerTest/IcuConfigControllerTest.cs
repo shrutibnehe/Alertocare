@@ -1,6 +1,8 @@
 ﻿using AlertToCare.Data;
 using AlertToCareAPI.Controllers;
+using AlertToCareAPI.Database;
 using AlertToCareAPI.Models;
+using AlertToCareAPI.Repo;
 using AlertToCareAPITest.RepoTest;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -8,66 +10,108 @@ using Xunit;
 
 namespace AlertToCareAPITest.ControllerTest
 {
-    public class IcuConfigControllerTest : InMemoryContext
-    {
-        private readonly Mock<IIcuConfigurationRepository> _MockRepo;
-
+     public class IcuConfigControllerTest : InMemoryContext
+      {
+        // private readonly Mock<IIcuConfigurationRepository> _MockRepo;
+        // private readonly IcuConfigController IcuController;
+        private readonly IIcuConfigurationRepository _repository;
         private readonly IcuConfigController IcuController;
 
-        public IcuConfigControllerTest()
+          public IcuConfigControllerTest()
+          {
+            //_MockRepo = new Mock<IIcuConfigurationRepository>();
+            //IcuController = new IcuConfigController(_MockRepo.Object);
+            _repository = new IcuConfigrationRepository(Context);
+            IcuController = new IcuConfigController(_repository);
+          }
+       
+          [Fact]
+          public void TestGetAllICUs()
+          {
+              var _Icus = IcuController.GetAllIcus();
+            // Assert.NotNull(_Icus);
+            Assert.NotEmpty(_Icus);
+              
+          }
+        [Fact]
+        public void TestGetSpecificIcu()
         {
-            _MockRepo = new Mock<IIcuConfigurationRepository>();
-            IcuController = new IcuConfigController(_MockRepo.Object);
+            var _Icus = IcuController.GetSpecificIcu("ICU001");
+            // Assert.NotNull(_Icus);
+            Assert.IsType<OkObjectResult>(_Icus);
+           
         }
         [Fact]
-        public void TestGetAllICUs()
+        public void TestGetSpecificIcuWhenIcuNotPresentWithId()
         {
-            var _Icus = IcuController.GetAllIcus();
-            Assert.NotNull(_Icus);
-            //Assert.IsType<OkResult>(_Icus);
+            var _Icus = IcuController.GetSpecificIcu("ICU008");
+            Assert.IsType<NotFoundObjectResult>(_Icus);
         }
 
-      /*  [Fact]
-        public void TestGetBedStatus()
-        {
-            var _Bed = IcuController.GetSpecificIcu("B002");
-            Assert.NotNull(_Bed);
+       
+
+       // [Theory]
+         // [InlineData("ICU002")]
+          //[InlineData("ICU005")]
+          [Fact]
+          public void TestUpdateIcu()
+          {
+              var NewIcu = new Icu
+              {
+                  Id = "ICU001",
+                  BedCount = 15,
+                  LayoutId = "L001"
+              };
+              var IcuInfo = IcuController.UpdateIcu("ICU001", NewIcu);
+
+            //Assert.NotNull(IcuInfo);
+            //Assert.IsType<NotFoundResult>(IcuInfo);
+            //Assert.IsType<OkResult>(IcuInfo);
         }
-      */
-        [Theory]
-        [InlineData("ICU002")]
-        [InlineData("ICU005")]
-        public void TestUpdateIcu(string Id)
+
+          [Fact]
+          public void TestDeleteIcuWithValidId()
+          {
+              var _Icu = IcuController.DeleteIcu("ICU001");
+              //Assert.NotNull(_Icu);
+              Assert.IsType<OkResult>(_Icu);
+          }
+        [Fact]
+        public void TestDeleteIcuWithInValidId()
+        {
+            var _Icu = IcuController.DeleteIcu("ICU0010");
+            //Assert.NotNull(_Icu);
+            Assert.IsType<NotFoundResult>(_Icu);
+        }
+        [Fact]
+          public void TestAddIcu()
+          {
+              var NewIcu = new Icu
+              {
+                  Id = "ICU003",
+                  BedCount = 10,
+                  LayoutId = "L001"
+              };
+              var _Icu = IcuController.AddIcu(NewIcu);
+              Assert.NotNull(_Icu);
+              Assert.IsType<OkObjectResult>(_Icu);
+          }
+        [Fact]
+        public void TestAddWithInValidIcuData()
         {
             var NewIcu = new Icu
             {
-                Id = "ICU006",
-                BedCount = 10,
-                LayoutId = "L003"
-            };
-            var IcuInfo = IcuController.UpdateIcu(Id, NewIcu);
-            Assert.NotNull(IcuInfo);
-            Assert.IsType<NotFoundResult>(IcuInfo);
-        }
-
-        [Fact]
-        public void TestDeleteIcu()
-        {
-            var _Icu = IcuController.DeleteIcu("ICU002");
-            Assert.NotNull(_Icu);
-        }
-        [Fact]
-        public void TestAddIcu()
-        {
-            var NewIcu = new Icu
-            {
-                Id = "ICU002",
-                BedCount = 10,
-                LayoutId = "L003"
+                
+                BedCount = 10
+                
             };
             var _Icu = IcuController.AddIcu(NewIcu);
-            Assert.NotNull(_Icu);
-            Assert.IsType<NoContentResult>(_Icu);
+           
+            Assert.IsType<BadRequestObjectResult>(_Icu);
         }
     }
+
+    
+        
+    
 }
