@@ -21,7 +21,7 @@ namespace AlertToCareAPI
             _config = config;
         }
 
-        private IConfiguration _config { get; }
+        public IConfiguration _config { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)

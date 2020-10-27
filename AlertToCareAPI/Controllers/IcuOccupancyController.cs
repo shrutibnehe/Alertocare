@@ -19,14 +19,14 @@ namespace AlertToCareAPI.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Patient>> GetAllPatients()
+        public IEnumerable<Patient> GetAllPatients()
         {
             var patients = _repository.GetDetailsOfAllPatients();
-            return Ok(patients);
+            return patients;
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Patient> GetPatientById(string id)
+        public ActionResult GetPatientById(string id)
         {
             var patient = _repository.GetPatientById(id);
             if(patient==null)
@@ -40,7 +40,7 @@ namespace AlertToCareAPI.Controllers
             
         }
         [HttpGet("AllAvailableBeds")]
-        public ActionResult<Bed> GetAvailableBeds()
+        public ActionResult GetAvailableBeds()
         {
             var BedsList=_repository.GetAvailableBeds();
             if(BedsList!=null)
@@ -54,7 +54,7 @@ namespace AlertToCareAPI.Controllers
 
         }
         [HttpGet("IcuSpecific/{IcuId}")]
-        public ActionResult<Bed> GetAvailableBedsForIcu(string IcuId)
+        public ActionResult GetAvailableBedsForIcu(string IcuId)
         {
            
             bool IcuResponse=_repository.CheckIcuExists(IcuId);
@@ -101,17 +101,20 @@ namespace AlertToCareAPI.Controllers
             {
                 return NotFound();
             }
-
+            else if(id!=patient.Id)
+            {
+                return BadRequest("Enter Valid ID");
+            }
+           // _repository.UpdatePatient(patient,PatientModelFromRepository);
             PatientModelFromRepository.PatientName = patient.PatientName;
             PatientModelFromRepository.Age = patient.Age;
             PatientModelFromRepository.BedId = patient.BedId;
             PatientModelFromRepository.IcuId = patient.IcuId;
             PatientModelFromRepository.ContantNumber = patient.ContantNumber;
 
-            _repository.UpdatePatient(patient);
+           // _repository.UpdatePatient(patient);
             _repository.SaveChanges();
-
-            return NoContent();
+            return Ok();
         }
 
         [HttpDelete("{id}")]

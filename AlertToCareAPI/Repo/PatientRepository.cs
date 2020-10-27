@@ -132,9 +132,18 @@ namespace AlertToCareAPI.Repo
         }
 
         [ExcludeFromCodeCoverage]
-        public void UpdatePatient(Patient patient)
+        public void UpdatePatient(Patient newpatient,Patient oldpatient)
         {
             //Nothing to do here
+            var BedsList = _context.BedsInfo.ToList();
+            Bed response=CheckValidityofPatientDetails(newpatient);
+            if(response!=null)
+            {
+                var result = BedsList.First(item => item.BedNo == oldpatient.BedId && item.IcuId == oldpatient.IcuId);
+                ChangeStatus(result, false);
+                ChangeStatus(response, true);
+
+            }
         }
 
         public IEnumerable<Bed> GetAvailableBeds()

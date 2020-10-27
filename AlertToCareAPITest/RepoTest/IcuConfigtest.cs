@@ -7,7 +7,7 @@ namespace AlertToCareAPITest.RepoTest
 {
     public class IcuConfigtest : AlertToCareAPITest.RepoTest.InMemoryContext
     {
-        [Fact]
+       /* [Fact]
         public void CheckAddIcuSuccessful()
         {
             var NewIcu = new Icu
@@ -85,6 +85,6 @@ namespace AlertToCareAPITest.RepoTest
         {
             var _Icu = new IcuConfigrationRepository(Context);
             Assert.True(_Icu.SaveChanges());
-        }
+        }*/
     }
 }

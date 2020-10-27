@@ -55,6 +55,14 @@ namespace AlertToCareAPITest.RepoTest
                 IsOccupied = true
             };
             context.Add(Bed2);
+            var Bed3 = new Bed
+            {
+                Id = 3,
+                BedNo = "B003",
+                IcuId = "ICU001",
+                IsOccupied = false
+            };
+            context.Add(Bed3);
             var _Patient = new Patient
             {
                 Id = "P01",

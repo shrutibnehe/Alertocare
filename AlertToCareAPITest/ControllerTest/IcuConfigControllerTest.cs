@@ -29,15 +29,13 @@ namespace AlertToCareAPITest.ControllerTest
           public void TestGetAllICUs()
           {
               var _Icus = IcuController.GetAllIcus();
-            // Assert.NotNull(_Icus);
-            Assert.NotEmpty(_Icus);
+              Assert.NotEmpty(_Icus);
               
           }
         [Fact]
         public void TestGetSpecificIcu()
         {
             var _Icus = IcuController.GetSpecificIcu("ICU001");
-            // Assert.NotNull(_Icus);
             Assert.IsType<OkObjectResult>(_Icus);
            
         }
@@ -47,12 +45,7 @@ namespace AlertToCareAPITest.ControllerTest
             var _Icus = IcuController.GetSpecificIcu("ICU008");
             Assert.IsType<NotFoundObjectResult>(_Icus);
         }
-
        
-
-       // [Theory]
-         // [InlineData("ICU002")]
-          //[InlineData("ICU005")]
           [Fact]
           public void TestUpdateIcu()
           {
@@ -63,13 +56,34 @@ namespace AlertToCareAPITest.ControllerTest
                   LayoutId = "L001"
               };
               var IcuInfo = IcuController.UpdateIcu("ICU001", NewIcu);
+              Assert.IsType<OkResult>(IcuInfo);
+          }
 
-            //Assert.NotNull(IcuInfo);
-            //Assert.IsType<NotFoundResult>(IcuInfo);
-            //Assert.IsType<OkResult>(IcuInfo);
+        [Fact]
+        public void TestUpdateIcuWithMismatchInIds()
+        {
+            var NewIcu = new Icu
+            {
+                Id = "ICU002",//id mismatch
+                BedCount = 15,
+                LayoutId = "L001"
+            };
+            var IcuInfo = IcuController.UpdateIcu("ICU001", NewIcu);//id mismatch
+            Assert.IsType<BadRequestObjectResult>(IcuInfo);
         }
-
-          [Fact]
+        [Fact]
+        public void TestUpdateIcuWithIcuIdNotRegistered()
+        {
+            var NewIcu = new Icu
+            {
+                Id = "ICU042",
+                BedCount = 15,
+                LayoutId = "L001"
+            };
+            var IcuInfo = IcuController.UpdateIcu("ICU042", NewIcu);
+            Assert.IsType<NotFoundResult>(IcuInfo);
+        }
+        [Fact]
           public void TestDeleteIcuWithValidId()
           {
               var _Icu = IcuController.DeleteIcu("ICU001");
@@ -84,7 +98,7 @@ namespace AlertToCareAPITest.ControllerTest
             Assert.IsType<NotFoundResult>(_Icu);
         }
         [Fact]
-          public void TestAddIcu()
+          public void TestAddIcuWithValidData()
           {
               var NewIcu = new Icu
               {
@@ -101,7 +115,6 @@ namespace AlertToCareAPITest.ControllerTest
         {
             var NewIcu = new Icu
             {
-                
                 BedCount = 10
                 
             };
@@ -109,9 +122,52 @@ namespace AlertToCareAPITest.ControllerTest
            
             Assert.IsType<BadRequestObjectResult>(_Icu);
         }
-    }
+        [Fact]
+        public void TestAddWithLayoutIdNotRegistered()
+        {
+            var NewIcu = new Icu
+            {
+                Id="ICU004",
+                BedCount = 10,
+                LayoutId="L004"
 
-    
-        
-    
+            };
+            var _Icu = IcuController.AddIcu(NewIcu);
+            Assert.IsType<BadRequestObjectResult>(_Icu);
+            Assert.IsNotType<OkObjectResult>(_Icu);
+        }
+        [Fact]
+        public void TestAddWithAddingIcuWithSamePrimaryKey()
+        {
+            var NewIcu = new Icu
+            {
+                Id = "ICU001",
+                BedCount = 12,
+                LayoutId = "L001"
+
+            };
+            var _Icu = IcuController.AddIcu(NewIcu);
+            Assert.IsType<BadRequestObjectResult>(_Icu);
+            Assert.IsNotType<OkObjectResult>(_Icu);
+        }
+        [Fact]
+        public void TestGetAllLayouts()
+        {
+            var layouts=IcuController.GetAllLayouts();
+            Assert.NotEmpty(layouts);
+        }
+        [Fact]
+        public void TestAddBedsWithValidData()
+        {
+            var addbeds = IcuController.AddBeds("ICU001", 12);
+            Assert.IsType<OkResult>(addbeds);
+        }
+        [Fact]
+        public void TestAddBedsWithInValidData()
+        {
+            var addbeds = IcuController.AddBeds("ICU001", 10);
+            Assert.IsType<BadRequestObjectResult>(addbeds);
+        }
+
+    }
 }

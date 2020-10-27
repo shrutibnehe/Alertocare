@@ -59,7 +59,7 @@ namespace AlertToCareAPI.Controllers
             }
             catch (SQLiteException exception)
             {
-              return new ObjectResult(exception.Message);
+              return BadRequest(exception.Message);
             }
         }
 
@@ -101,11 +101,11 @@ namespace AlertToCareAPI.Controllers
             return Ok(); 
         }
         [HttpGet("Layouts")]
-        public ActionResult<IEnumerable<Models.Layout>> GetAllLayouts()
+        public IEnumerable<Models.Layout> GetAllLayouts()
         {
             var Layouts = _repository.GetAllLayouts();
 
-            return Ok(Layouts);
+            return Layouts;
         }
 
         [HttpPost("{IcuId}/{BedCount}")]

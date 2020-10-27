@@ -1,5 +1,4 @@
-﻿
-using System.Linq;
+﻿using System.Linq;
 using AlertToCareAPI.Models;
 using AlertToCareAPI.Repo;
 using Xunit;
@@ -11,7 +10,7 @@ namespace AlertToCareTest.RepoTest
 
         //PatientRepository _PatientData = new PatientRepository(Context);
 
-        [Fact]
+       /* [Fact]
         public void TestAddPatientSuccessful()
         {
             var dummyPatient = new Patient
@@ -87,6 +86,6 @@ namespace AlertToCareTest.RepoTest
         {
             var _Patient = new PatientRepository(Context);
             Assert.True(_Patient.SaveChanges());
-        }
+        }*/
     }
 }

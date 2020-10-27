@@ -10,7 +10,7 @@ namespace AlertToCare.Data
         Patient GetPatientById(string id);
         public bool AddNewPatient(Patient patient);
         public void RemovePatient(Patient patient);
-        public void UpdatePatient(Patient patient);
+        public void UpdatePatient(Patient updatedpatient,Patient tobeupdated );
         IEnumerable<Patient> GetDetailsOfAllPatients();
         IEnumerable<Bed> GetAvailableBeds();
         IEnumerable<Bed> GetSpecificIcuAvailableBeds(string IcuId);
