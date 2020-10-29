@@ -22,6 +22,7 @@ namespace AlertToCareAPI
         }
 
         public IConfiguration _config { get; }
+       
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -29,7 +30,7 @@ namespace AlertToCareAPI
             services.AddControllers();
             services.AddDbContext<DataContext>(options =>
             {
-                options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
+               options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
                 //options.UseSqlite(_config.GetConnectionString("Data source= C:/Users/320107932/OneDrive - Philips/Bootcamp/Changes/AlertToCareAPI/AlertToCare.db"));
             });
             

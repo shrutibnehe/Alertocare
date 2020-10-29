@@ -1,4 +1,4 @@
-﻿using AlertToCareAPITest.ControllerInterfaces;
+﻿//using AlertToCareAPITest.ControllerInterfaces;
 using AlertToCareAPI.Controllers;
 using Xunit;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +7,7 @@ using Moq;
 
 namespace AlertToCareAPITest.ControllerTest
 {
-    public class PatientsMontoringControllerTest
+   /* public class PatientsMontoringControllerTest
     {
         readonly ISudoMonitornigRepo operations = new ISudoMonitornigRepo();
         private readonly Mock<IMonitoringRepo> _MockRepo;
@@ -37,5 +37,5 @@ namespace AlertToCareAPITest.ControllerTest
             var _Controller = PatientMonitorController.GetVitals();
             Assert.NotNull(_Controller);
         }
-    }
+    }*/
 }
