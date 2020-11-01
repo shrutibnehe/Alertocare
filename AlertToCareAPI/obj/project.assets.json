@@ -1319,11 +1319,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\320107932\\OneDrive - Philips\\Bootcamp\\Changes\\AlertToCareAPI\\AlertToCareAPI.csproj",
+      "projectUniqueName": "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPI\\AlertToCareAPI.csproj",
       "projectName": "AlertToCareAPI",
-      "projectPath": "C:\\Users\\320107932\\OneDrive - Philips\\Bootcamp\\Changes\\AlertToCareAPI\\AlertToCareAPI.csproj",
+      "projectPath": "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPI\\AlertToCareAPI.csproj",
       "packagesPath": "C:\\Users\\320107932\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\320107932\\OneDrive - Philips\\Bootcamp\\Changes\\AlertToCareAPI\\obj\\",
+      "outputPath": "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

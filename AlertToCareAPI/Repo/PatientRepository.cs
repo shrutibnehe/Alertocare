@@ -111,7 +111,7 @@ namespace AlertToCareAPI.Repo
         }
 
 
-        public void RemovePatient(Patient patient)
+        public void RemovePatient(Patient patient,string IcuId)
         {
             /* if (patient == null)
              {
@@ -121,7 +121,7 @@ namespace AlertToCareAPI.Repo
             //Make the bed occupied available then remove the patient
             // _context.BedsInfo.FromSqlRaw($"UPDATE BedsInfo SET IsOccupied = 0 WHERE Id = {patient.Id}");
            var BedsList= _context.BedsInfo.ToList();
-            var result = BedsList.First(item => item.BedNo == patient.BedId && item.IcuId == patient.IcuId);
+            var result = BedsList.First(item => item.BedNo == patient.BedId && item.IcuId == IcuId);
             ChangeStatus(result, false);
             _context.PatientsInfo.Remove(patient);
         }
@@ -131,8 +131,8 @@ namespace AlertToCareAPI.Repo
             return (_context.SaveChanges() >= 0); //To save changes into the database
         }
 
-        [ExcludeFromCodeCoverage]
-        public void UpdatePatient(Patient newpatient,Patient oldpatient)
+        
+      /*  public void UpdatePatient(Patient newpatient,Patient oldpatient)
         {
             //Nothing to do here
             var BedsList = _context.BedsInfo.ToList();
@@ -144,7 +144,7 @@ namespace AlertToCareAPI.Repo
                 ChangeStatus(response, true);
 
             }
-        }
+        }*/
 
         public IEnumerable<Bed> GetAvailableBeds()
         {
@@ -187,6 +187,17 @@ namespace AlertToCareAPI.Repo
             {
                 return false;
             }
+        }
+        public Patient GetPatientByIcuAndBed(string BedNo, string IcuId)
+        {
+            
+            
+                var PatientsList=_context.PatientsInfo.ToList();
+                var Patient=PatientsList.Find(item => item.IcuId == IcuId && item.BedId == BedNo);
+                return Patient;
+
+            
+           
         }
     }
 }

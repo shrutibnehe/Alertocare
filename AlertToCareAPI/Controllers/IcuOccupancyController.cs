@@ -84,15 +84,15 @@ namespace AlertToCareAPI.Controllers
                     return Ok();
                 }
                 return BadRequest("Invalid Bed and Icu Details Entered");
-            }catch(Exception exception)
+            }catch(Exception)
             {
-                return new ObjectResult(exception.Message);
+                return BadRequest("Enter Valid PatientId");
             }
             
             
         }
 
-        [HttpPut("{id}")]
+       /* [HttpPut("{id}")]
 
         public ActionResult UpdatePatient(string id, Patient patient)
         {
@@ -115,21 +115,29 @@ namespace AlertToCareAPI.Controllers
            // _repository.UpdatePatient(patient);
             _repository.SaveChanges();
             return Ok();
-        }
+        }*/
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}/{IcuId}")]
 
-        public ActionResult RemovePatient(string id)
+        public ActionResult RemovePatient(string id,string IcuId)
         {
             var PatientModelFromRepository = _repository.GetPatientById(id);
             if (PatientModelFromRepository == null)
             {
                 return NotFound();
             }
-            _repository.RemovePatient(PatientModelFromRepository);
+            _repository.RemovePatient(PatientModelFromRepository,IcuId);
             _repository.SaveChanges();
             return Ok();
         }
+        
+        [HttpGet("Patient/{BedNo}/{IcuId}")]
+        public Patient GetPatientInfo(string BedNo,string IcuId)
+        {
+            return _repository.GetPatientByIcuAndBed(BedNo, IcuId);
+            
+        }
+
 
     }
 }

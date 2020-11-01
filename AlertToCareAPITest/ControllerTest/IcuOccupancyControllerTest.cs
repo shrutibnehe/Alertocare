@@ -11,14 +11,12 @@ namespace AlertToCareAPITest.ControllerTest
 {
     public class IcuOccupancyControllerTest:InMemoryContext
     {
-        // private readonly Mock<IPatientRepo> _MockRepo;
-        //private readonly IcuOccupancyController OccupancyController;
+        
         private readonly IPatientRepo _repository;
         private readonly IcuOccupancyController occupancyController;
         public IcuOccupancyControllerTest()
         {
-            //_MockRepo = new Mock<IPatientRepo>();
-            //OccupancyController = new IcuOccupancyController(_MockRepo.Object);
+           
             _repository = new PatientRepository(Context);
             occupancyController = new IcuOccupancyController(_repository);
         }
@@ -93,7 +91,7 @@ namespace AlertToCareAPITest.ControllerTest
             };
             var NewPatient = occupancyController.AddNewPatient(_Patient);
 
-            Assert.IsType<ObjectResult>(NewPatient);
+            Assert.IsType<BadRequestObjectResult>(NewPatient);
         }
         [Fact]
         public void TestAddNewPatientWithInvalidBedIdandIcuIdDetails()
@@ -130,14 +128,14 @@ namespace AlertToCareAPITest.ControllerTest
         public void TestRemovePatientWithValidDetails()
         {
 
-            var NewPatient = occupancyController.RemovePatient("P01");
+            var NewPatient = occupancyController.RemovePatient("P01","ICU001");
             Assert.IsType<OkResult>(NewPatient);
         }
         [Fact]
         public void TestRemovePatientWithInValidId()
         {
 
-            var NewPatient = occupancyController.RemovePatient("P0109");
+            var NewPatient = occupancyController.RemovePatient("P0109","ICU001");
             Assert.IsType<NotFoundResult>(NewPatient);
         }
     }

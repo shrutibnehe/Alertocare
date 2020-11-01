@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareUI\AlertToCareUI\obj\Debug\
+C:\Users\320107932\OneDrive - Philips\WPF\AlertToCareUI\AlertToCareUI\obj\Debug\
 AlertToCareUI
 none
 false
 DEBUG;TRACE
-C:\Users\320107932\OneDrive - Philips\Bootcamp\Changes\AlertToCareUI\AlertToCareUI\App.xaml
-3-85327526
+C:\Users\320107932\OneDrive - Philips\WPF\AlertToCareUI\AlertToCareUI\App.xaml
+10-1318961386
 
-7-2035066091
-13-1505183044
-MainWindow.xaml;Window1.xaml;Window2.xaml;
+1536073432
+15481256953
+ICU001_Rectangular_12.xaml;ICU002_Rectangular_10.xaml;ICU003_LLayout_12.xaml;ICU004_LLayout_10.xaml;MainWindow.xaml;Views\AdmissionAndDischarge.xaml;Views\LLayout_10.xaml;Views\LLayout_12.xaml;Views\Rectangular_10.xaml;Views\Rectangular_12.xaml;
 
 False
 

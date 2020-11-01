@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="AlertToCareUI.Views.AdmissionAndDischarge"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AlertToCareUI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Background="FloralWhite"  Orientation="Vertical" Width="500" Height="320" >
+            <Label Content = "ADMISSION And DISCHARGE" FontSize = "15"
+         FontWeight = "Bold" Grid.Column = "0" Grid.Row = "0"/>
+            <Grid Margin="0,20,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height = "*" />
+                    <RowDefinition Height = "*" />
+                    <RowDefinition Height = "*" />
+                    <RowDefinition Height = "*" />
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width = "*" />
+                    <ColumnDefinition Width = "*" />
+
+                </Grid.ColumnDefinitions>
+                <!--=<Label Content = "ADMISSION/DISCHARGE" FontSize = "15"
+         FontWeight = "Bold" Grid.Column = "0" Grid.Row = "0"/>-->
+
+                <StackPanel Grid.Column = "0" Grid.Row = "1" Orientation = "Horizontal">
+                    <Label Content = "ID" FontWeight="Bold"  VerticalAlignment = "Center" Width = "70"/>
+                    <TextBox Name = "id"  VerticalAlignment = "Center"
+            Width = "50">
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal">
+                    <Label Content = "Age" FontWeight="Bold" VerticalAlignment = "Center" Width = "70"/>
+                    <TextBox Name = "age" VerticalAlignment = "Center"
+            Width = "50">
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal">
+                    <Label Content = "Bed No" FontWeight="Bold" VerticalAlignment = "Center" Width = "70"/>
+                    <TextBox Name = "bedno" VerticalAlignment = "Center"
+            Width = "50"></TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column = "1" Grid.Row = "1" Orientation = "Horizontal">
+                    <Label Content = "Name" FontWeight="Bold" VerticalAlignment = "Center" Width = "70"/>
+                    <TextBox Name = "name" VerticalAlignment = "Center"
+            Width = "100"></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Column = "1" Grid.Row = "2" Orientation = "Horizontal">
+                    <Label Content = "ContactNo" FontWeight="Bold" VerticalAlignment = "Center" Width = "70"/>
+                    <TextBox Name = "contact" VerticalAlignment = "Center"
+            Width = "100"></TextBox>
+                    <!--</StackPanel>
+                <StackPanel Grid.Column = "1" Grid.Row = "3" Orientation = "Horizontal">
+                    <Label Content = "ICU-Id" FontWeight="Bold" VerticalAlignment = "Center" Width = "70"/>
+                    <TextBox Name = "icuid" VerticalAlignment = "Center"
+            Width = "100"></TextBox>-->
+                   <!-- <TextBlock Name = "icuid" VerticalAlignment = "Center" Text="{}"
+            Width = "100"></TextBlock>-->
+                </StackPanel>
+            </Grid>
+            <Button Content="Patient Admission" Width="200" Height="40" Click="Admit"/>
+            <StackPanel  Orientation = "Horizontal" Margin="0,20,0,0">
+                <Label Content = "Patient ID To be Discharged" FontWeight="Bold" VerticalAlignment = "Center"/>
+                <TextBox Name = "patientid" VerticalAlignment = "Center"
+            Width = "100"></TextBox>
+            </StackPanel>
+            <Button Content="Patient Discharge" Width="200" Height="40" Margin="0,20,0,0" Click="Discharge"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

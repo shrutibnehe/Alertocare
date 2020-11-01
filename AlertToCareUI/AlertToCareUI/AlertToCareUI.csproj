@@ -35,8 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,12 +59,50 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
+    <Compile Include="ICU001_Rectangular_12.xaml.cs">
+      <DependentUpon>ICU001_Rectangular_12.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window2.xaml.cs">
-      <DependentUpon>Window2.xaml</DependentUpon>
+    <Compile Include="ICU002_Rectangular_10.xaml.cs">
+      <DependentUpon>ICU002_Rectangular_10.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ICU003_LLayout_12.xaml.cs">
+      <DependentUpon>ICU003_LLayout_12.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ICU004_LLayout_10.xaml.cs">
+      <DependentUpon>ICU004_LLayout_10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PatientModel.cs" />
+    <Compile Include="Views\AdmissionAndDischarge.xaml.cs">
+      <DependentUpon>AdmissionAndDischarge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LLayout_10.xaml.cs">
+      <DependentUpon>LLayout_10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LLayout_12.xaml.cs">
+      <DependentUpon>LLayout_12.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Rectangular_10.xaml.cs">
+      <DependentUpon>Rectangular_10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Rectangular_12.xaml.cs">
+      <DependentUpon>Rectangular_12.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ICU001_Rectangular_12.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ICU002_Rectangular_10.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ICU003_LLayout_12.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ICU004_LLayout_10.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,11 +115,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Window1.xaml">
+    <Page Include="Views\AdmissionAndDischarge.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window2.xaml">
+    <Page Include="Views\LLayout_10.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LLayout_12.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Rectangular_10.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Rectangular_12.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,6 +154,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
