@@ -71,9 +71,15 @@
     <Compile Include="ICU004_LLayout_10.xaml.cs">
       <DependentUpon>ICU004_LLayout_10.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Alert.cs" />
     <Compile Include="Models\PatientModel.cs" />
+    <Compile Include="ServiceAccessPoint\RequestHandler.cs" />
+    <Compile Include="ViewModel\AlertManagerViewModel.cs" />
     <Compile Include="Views\AdmissionAndDischarge.xaml.cs">
       <DependentUpon>AdmissionAndDischarge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AlertManagerView.xaml.cs">
+      <DependentUpon>AlertManagerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LLayout_10.xaml.cs">
       <DependentUpon>LLayout_10.xaml</DependentUpon>
@@ -86,6 +92,21 @@
     </Compile>
     <Compile Include="Views\Rectangular_12.xaml.cs">
       <DependentUpon>Rectangular_12.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FirstWindow.xaml.cs">
+      <DependentUpon>FirstWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ICU1Beds10Window.xaml.cs">
+      <DependentUpon>ICU1Beds10Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ICU1Beds12Window.xaml.cs">
+      <DependentUpon>ICU1Beds12Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ICU2Beds10Window.xaml.cs">
+      <DependentUpon>ICU2Beds10Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ICU2Beds12Window.xaml.cs">
+      <DependentUpon>ICU2Beds12Window.xaml</DependentUpon>
     </Compile>
     <Page Include="ICU001_Rectangular_12.xaml">
       <SubType>Designer</SubType>
@@ -119,6 +140,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AlertManagerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LLayout_10.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -132,6 +157,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Rectangular_12.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FirstWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ICU1Beds10Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ICU1Beds12Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ICU2Beds10Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ICU2Beds12Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,5 +208,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

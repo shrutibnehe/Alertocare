@@ -16,25 +16,31 @@ namespace AlertToCareAPI.Controllers
             _repository = repository;
         }
 
-        [HttpGet]
-        public ActionResult<IEnumerable<Vital>> GetVitals()
+        [HttpGet("{icuID}")]
+        public ActionResult<IEnumerable<Alert>> GetAlerts(string icuID)
         {
-            var vitals = _repository.GetAllVitals();
+           var alerts = _repository.GetAllActiveAlerts(icuID);
 
-            return Ok(vitals);
+            return Ok(alerts);
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<bool> CheckVitalsById(string id)
+        [HttpGet("{icuID}/{id}")]
+        public ActionResult<bool> ChangeStatusOfAlert(string id)
         {
-            var vitalsModelFromRepo = _repository.GetVitalsById(id);
-            if (vitalsModelFromRepo == null)
-            {
-                return NotFound();
-            }
-            _repository.CheckVitals(vitalsModelFromRepo);
+            var IsStatusChanged = _repository.AlertChangeStatus(id);
+            return Ok(IsStatusChanged);
+        }
 
-            return Ok();
+        [HttpGet("sample")]
+        public Alert Testing()
+        {
+            Alert alert = new Alert();
+            alert.Id = "AL5";
+            alert.Message = "testing";
+            alert.PatientId = "hello";
+            alert.IsActive = 1;
+            alert.BedId = "B01";
+            return alert;
         }
     }
 }

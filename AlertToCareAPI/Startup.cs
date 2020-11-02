@@ -30,8 +30,10 @@ namespace AlertToCareAPI
             services.AddControllers();
             services.AddDbContext<DataContext>(options =>
             {
-               options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
+              options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
                 //options.UseSqlite(_config.GetConnectionString("Data source= C:/Users/320107932/OneDrive - Philips/Bootcamp/Changes/AlertToCareAPI/AlertToCare.db"));
+                //options.UseSqlite("Data source= C: /Users/320107932/OneDrive - Philips/Merged/Alertocare/AlertToCareAPI/AlertToCare.db");
+            
             });
             
             services.AddScoped<IIcuConfigurationRepository, IcuConfigrationRepository>();

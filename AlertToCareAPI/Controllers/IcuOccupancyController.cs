@@ -29,7 +29,7 @@ namespace AlertToCareAPI.Controllers
         public ActionResult GetPatientById(string id)
         {
             var patient = _repository.GetPatientById(id);
-            if(patient==null)
+            if (patient == null)
             {
                 return BadRequest($"Patient with Id {id} Not present");
             }
@@ -37,15 +37,15 @@ namespace AlertToCareAPI.Controllers
             {
                 return Ok(patient);
             }
-            
+
         }
         [HttpGet("AllAvailableBeds")]
         public ActionResult GetAvailableBeds()
         {
-            var BedsList=_repository.GetAvailableBeds();
-            if(BedsList!=null)
+            var bedsList = _repository.GetAvailableBeds();
+            if (bedsList != null)
             {
-                return Ok(BedsList);
+                return Ok(bedsList);
             }
             else
             {
@@ -53,20 +53,20 @@ namespace AlertToCareAPI.Controllers
             }
 
         }
-        [HttpGet("IcuSpecific/{IcuId}")]
-        public ActionResult GetAvailableBedsForIcu(string IcuId)
+        [HttpGet("IcuSpecific/{icuId}")]
+        public ActionResult GetAvailableBedsForIcu(string icuId)
         {
-           
-            bool IcuResponse=_repository.CheckIcuExists(IcuId);
-            if(IcuResponse==false)
+
+            bool icuResponse = _repository.CheckIcuExists(icuId);
+            if (icuResponse == false)
             {
                 return BadRequest("Invalid Icu Id");
             }
             else
             {
-                var AvailableBeds=_repository.GetSpecificIcuAvailableBeds(IcuId);
-                if(AvailableBeds!=null)
-                    return Ok(AvailableBeds);
+                var availableBeds = _repository.GetSpecificIcuAvailableBeds(icuId);
+                if (availableBeds != null)
+                    return Ok(availableBeds);
                 return BadRequest("Beds are not available");
             }
         }
@@ -78,64 +78,65 @@ namespace AlertToCareAPI.Controllers
             try
             {
                 bool response = _repository.AddNewPatient(patient);
-                if (response == true)
+                if (response)
                 {
                     _repository.SaveChanges();
                     return Ok();
                 }
                 return BadRequest("Invalid Bed and Icu Details Entered");
-            }catch(Exception)
+            }
+            catch (Exception)
             {
                 return BadRequest("Enter Valid PatientId");
             }
-            
-            
+
+
         }
 
-       /* [HttpPut("{id}")]
+        /* [HttpPut("{id}")]
 
-        public ActionResult UpdatePatient(string id, Patient patient)
+         public ActionResult UpdatePatient(string id, Patient patient)
+         {
+             var PatientModelFromRepository = _repository.GetPatientById(id);
+             if (PatientModelFromRepository == null)
+             {
+                 return NotFound();
+             }
+             else if(id!=patient.Id)
+             {
+                 return BadRequest("Enter Valid ID");
+             }
+            // _repository.UpdatePatient(patient,PatientModelFromRepository);
+             PatientModelFromRepository.PatientName = patient.PatientName;
+             PatientModelFromRepository.Age = patient.Age;
+             PatientModelFromRepository.BedId = patient.BedId;
+             PatientModelFromRepository.IcuId = patient.IcuId;
+             PatientModelFromRepository.ContantNumber = patient.ContantNumber;
+
+            // _repository.UpdatePatient(patient);
+             _repository.SaveChanges();
+             return Ok();
+         }*/
+
+        [HttpDelete("{id}/{icuId}")]
+
+        public ActionResult RemovePatient(string id, string icuId)
         {
             var PatientModelFromRepository = _repository.GetPatientById(id);
             if (PatientModelFromRepository == null)
             {
                 return NotFound();
             }
-            else if(id!=patient.Id)
-            {
-                return BadRequest("Enter Valid ID");
-            }
-           // _repository.UpdatePatient(patient,PatientModelFromRepository);
-            PatientModelFromRepository.PatientName = patient.PatientName;
-            PatientModelFromRepository.Age = patient.Age;
-            PatientModelFromRepository.BedId = patient.BedId;
-            PatientModelFromRepository.IcuId = patient.IcuId;
-            PatientModelFromRepository.ContantNumber = patient.ContantNumber;
-
-           // _repository.UpdatePatient(patient);
-            _repository.SaveChanges();
-            return Ok();
-        }*/
-
-        [HttpDelete("{id}/{IcuId}")]
-
-        public ActionResult RemovePatient(string id,string IcuId)
-        {
-            var PatientModelFromRepository = _repository.GetPatientById(id);
-            if (PatientModelFromRepository == null)
-            {
-                return NotFound();
-            }
-            _repository.RemovePatient(PatientModelFromRepository,IcuId);
+            _repository.RemovePatient(PatientModelFromRepository, icuId);
             _repository.SaveChanges();
             return Ok();
         }
-        
-        [HttpGet("Patient/{BedNo}/{IcuId}")]
-        public Patient GetPatientInfo(string BedNo,string IcuId)
+
+        [HttpGet("Patient/{bedNo}/{icuId}")]
+        public Patient GetPatientInfo(string bedNo, string icuId)
         {
-            return _repository.GetPatientByIcuAndBed(BedNo, IcuId);
-            
+            return _repository.GetPatientByIcuAndBed(bedNo, icuId);
+
         }
 
 

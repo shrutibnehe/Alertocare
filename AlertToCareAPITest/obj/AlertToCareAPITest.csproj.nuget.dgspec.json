@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPITest\\AlertToCareAPITest.csproj": {}
+    "C:\\Users\\320107932\\OneDrive - Philips\\Merged\\Alertocare\\AlertToCareAPITest\\AlertToCareAPITest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPITest\\AlertToCareAPITest.csproj": {
+    "C:\\Users\\320107932\\OneDrive - Philips\\Merged\\Alertocare\\AlertToCareAPITest\\AlertToCareAPITest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPITest\\AlertToCareAPITest.csproj",
+        "projectUniqueName": "C:\\Users\\320107932\\OneDrive - Philips\\Merged\\Alertocare\\AlertToCareAPITest\\AlertToCareAPITest.csproj",
         "projectName": "AlertToCareAPITest",
-        "projectPath": "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPITest\\AlertToCareAPITest.csproj",
+        "projectPath": "C:\\Users\\320107932\\OneDrive - Philips\\Merged\\Alertocare\\AlertToCareAPITest\\AlertToCareAPITest.csproj",
         "packagesPath": "C:\\Users\\320107932\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPITest\\obj\\",
+        "outputPath": "C:\\Users\\320107932\\OneDrive - Philips\\Merged\\Alertocare\\AlertToCareAPITest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPI\\AlertToCareAPI.csproj": {
-                "projectPath": "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPI\\AlertToCareAPI.csproj"
+              "C:\\Users\\320107932\\OneDrive - Philips\\Merged\\Alertocare\\AlertToCareAPI\\AlertToCareAPI.csproj": {
+                "projectPath": "C:\\Users\\320107932\\OneDrive - Philips\\Merged\\Alertocare\\AlertToCareAPI\\AlertToCareAPI.csproj"
               }
             }
           }
@@ -114,14 +114,14 @@
         }
       }
     },
-    "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPI\\AlertToCareAPI.csproj": {
+    "C:\\Users\\320107932\\OneDrive - Philips\\Merged\\Alertocare\\AlertToCareAPI\\AlertToCareAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPI\\AlertToCareAPI.csproj",
+        "projectUniqueName": "C:\\Users\\320107932\\OneDrive - Philips\\Merged\\Alertocare\\AlertToCareAPI\\AlertToCareAPI.csproj",
         "projectName": "AlertToCareAPI",
-        "projectPath": "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPI\\AlertToCareAPI.csproj",
+        "projectPath": "C:\\Users\\320107932\\OneDrive - Philips\\Merged\\Alertocare\\AlertToCareAPI\\AlertToCareAPI.csproj",
         "packagesPath": "C:\\Users\\320107932\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\320107932\\OneDrive - Philips\\WPF\\AlertToCareAPI\\obj\\",
+        "outputPath": "C:\\Users\\320107932\\OneDrive - Philips\\Merged\\Alertocare\\AlertToCareAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

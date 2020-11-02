@@ -1,0 +1,22 @@
+﻿<Window x:Class="AlertToCareUI.Windows.FirstWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AlertToCareUI.Windows"
+        mc:Ignorable="d"
+        Title="FirstWindow" Height="450" Width="800">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ComboBox Margin="5" Width="100" Height="50"  Grid.Row="0" Name="LayoutSelector" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <ComboBox Margin="5" Width="100" Height="50"  Grid.Column="1" Name="NoOfBedSelector" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Click="SelectLayout_Click" Margin="5" Grid.ColumnSpan="2" Height="50" Width="200" Content="Select Layout" Grid.Row="1" Name="SelectLayout" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Window>

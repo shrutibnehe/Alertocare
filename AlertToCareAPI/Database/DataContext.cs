@@ -17,5 +17,6 @@ namespace AlertToCareAPI.Database
         public DbSet<Patient> PatientsInfo { get; set; }
         public DbSet<Vital> VitalsInfo { get; set; }
         public DbSet<Layout> LayoutInfo { get; set; }
+        public DbSet<Alert> AlertsInfo { get; set; }
     }
 }

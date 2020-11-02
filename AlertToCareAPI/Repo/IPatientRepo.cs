@@ -9,13 +9,13 @@ namespace AlertToCare.Data
 
         Patient GetPatientById(string id);
         public bool AddNewPatient(Patient patient);
-        public void RemovePatient(Patient patient,string IcuId);
+        public void RemovePatient(Patient patient, string icuId);
         //public void UpdatePatient(Patient updatedpatient,Patient tobeupdated );
         IEnumerable<Patient> GetDetailsOfAllPatients();
         IEnumerable<Bed> GetAvailableBeds();
-        IEnumerable<Bed> GetSpecificIcuAvailableBeds(string IcuId);
-        public bool CheckIcuExists(string IcuId);
-        public Patient GetPatientByIcuAndBed(string BedNo,string IcuId);
+        IEnumerable<Bed> GetSpecificIcuAvailableBeds(string icuId);
+        public bool CheckIcuExists(string icuId);
+        public Patient GetPatientByIcuAndBed(string bedNo, string icuId);
 
     }
 }

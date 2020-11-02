@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\320107932\OneDrive - Philips\WPF\AlertToCareUI\AlertToCareUI\obj\Debug\
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\
 AlertToCareUI
 none
 false
 DEBUG;TRACE
-C:\Users\320107932\OneDrive - Philips\WPF\AlertToCareUI\AlertToCareUI\App.xaml
-10-1318961386
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\App.xaml
+162058937193
 
-1536073432
-15481256953
-ICU001_Rectangular_12.xaml;ICU002_Rectangular_10.xaml;ICU003_LLayout_12.xaml;ICU004_LLayout_10.xaml;MainWindow.xaml;Views\AdmissionAndDischarge.xaml;Views\LLayout_10.xaml;Views\LLayout_12.xaml;Views\Rectangular_10.xaml;Views\Rectangular_12.xaml;
+24-1721407309
+15-1428534757
+ICU001_Rectangular_12.xaml;ICU002_Rectangular_10.xaml;ICU003_LLayout_12.xaml;ICU004_LLayout_10.xaml;MainWindow.xaml;Views\AdmissionAndDischarge.xaml;Views\AlertManagerView.xaml;Views\LLayout_10.xaml;Views\LLayout_12.xaml;Views\Rectangular_10.xaml;Views\Rectangular_12.xaml;Windows\FirstWindow.xaml;Windows\ICU1Beds10Window.xaml;Windows\ICU1Beds12Window.xaml;Windows\ICU2Beds10Window.xaml;Windows\ICU2Beds12Window.xaml;
 
 False
 

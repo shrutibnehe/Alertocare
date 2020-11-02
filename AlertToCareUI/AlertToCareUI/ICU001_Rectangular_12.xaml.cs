@@ -25,8 +25,8 @@ namespace AlertToCareUI
         public ICU001_Rectangular_12()
         {
             InitializeComponent();
-            AdmissionAndDischarge admission = new AdmissionAndDischarge("ICU008");//ICU001
-            Rectangular_12 rectangle = new Rectangular_12("ICU008");//ICU001
+            AdmissionAndDischarge admission = new AdmissionAndDischarge("ICU001");//ICU001
+            Rectangular_12 rectangle = new Rectangular_12("ICU001");//ICU001
             //admission.IcuNo = "ICU008";
             
         }

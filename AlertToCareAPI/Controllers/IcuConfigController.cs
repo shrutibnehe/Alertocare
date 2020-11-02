@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using AlertToCare.Data;
 using System.Data.SQLite;
-
 using Microsoft.AspNetCore.Mvc;
 using AlertToCareAPI.Utility;
 
@@ -21,9 +20,9 @@ namespace AlertToCareAPI.Controllers
         [HttpGet]
         public IEnumerable<Models.Icu> GetAllIcus()
         {
-            var ICUs = _repository.GetAllIcus();
+            var icUs = _repository.GetAllIcus();
 
-            return ICUs;
+            return icUs;
         }
 
         [HttpGet("{id}")]
@@ -47,9 +46,9 @@ namespace AlertToCareAPI.Controllers
              }*/
             Validations_Icu validations = new Validations_Icu();
             bool Response = validations.ValidateIcu(icu);
-            if(Response==false)
+            if (Response == false)
             {
-               return BadRequest("Please Enter Valid Details");
+                return BadRequest("Please Enter Valid Details");
             }
             try
             {
@@ -59,7 +58,7 @@ namespace AlertToCareAPI.Controllers
             }
             catch (SQLiteException exception)
             {
-              return BadRequest(exception.Message);
+                return BadRequest(exception.Message);
             }
         }
 
@@ -67,17 +66,17 @@ namespace AlertToCareAPI.Controllers
 
         public ActionResult UpdateIcu(string id, Models.Icu icu)
         {
-            var IcuModelFromRepository = _repository.GetIcuById(id);
-            if(id!=icu.Id)
+            var icuModelFromRepository = _repository.GetIcuById(id);
+            if (id != icu.Id)
             {
                 return BadRequest("Enter Valid Details");
             }
-            if (IcuModelFromRepository == null)
+            if (icuModelFromRepository == null)
             {
                 return NotFound();
             }
-            IcuModelFromRepository.BedCount = icu.BedCount;
-            IcuModelFromRepository.LayoutId = icu.LayoutId;
+            icuModelFromRepository.BedCount = icu.BedCount;
+            icuModelFromRepository.LayoutId = icu.LayoutId;
 
             _repository.UpdateIcu(icu);
             _repository.SaveChanges();
@@ -94,25 +93,25 @@ namespace AlertToCareAPI.Controllers
             {
                 return NotFound();
             }
-           
+
             _repository.RemoveIcu(IcuModelFromRepository);
             _repository.SaveChanges();
 
-            return Ok(); 
+            return Ok();
         }
         [HttpGet("Layouts")]
         public IEnumerable<Models.Layout> GetAllLayouts()
         {
-            var Layouts = _repository.GetAllLayouts();
+            var layouts = _repository.GetAllLayouts();
 
-            return Layouts;
+            return layouts;
         }
 
         [HttpPost("{IcuId}/{BedCount}")]
-        public ActionResult AddBeds(string IcuId,int BedCount)
+        public ActionResult AddBeds(string icuId, int bedCount)
         {
-             bool response=_repository.ConfigureBeds(IcuId,BedCount);
-            if(response==true)
+            bool response = _repository.ConfigureBeds(icuId, bedCount);
+            if (response)
             {
                 _repository.SaveChanges();
                 return Ok();
@@ -121,7 +120,7 @@ namespace AlertToCareAPI.Controllers
             {
                 return BadRequest("Invalid IcuId and BedCount Entered");
             }
-           
+
         }
 
     }

@@ -1,11 +1,7 @@
 ﻿using AlertToCare.Data;
 using AlertToCareAPI.Database;
 using AlertToCareAPI.Models;
-using Microsoft.Data.Sqlite;
-//using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore;
 using System;
-using AlertToCareAPI.Utility;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Diagnostics.CodeAnalysis;
@@ -28,17 +24,17 @@ namespace AlertToCareAPI.Repo
              {
                  throw new ArgumentNullException(nameof(icu));
              }*/
-             
 
-            if (_context.IcusInfo.Find(icu.Id)!=null)
+
+            if (_context.IcusInfo.Find(icu.Id) != null)
             {
-               
-                throw new SQLiteException(SQLiteErrorCode.Constraint_PrimaryKey,"ID already exists");
-              
+
+                throw new SQLiteException(SQLiteErrorCode.Constraint_PrimaryKey, "ID already exists");
+
             }
             if (!CheckLayoutId(icu.LayoutId))
             {
-               throw new SQLiteException(SQLiteErrorCode.Constraint,"Layout Id not Registered");
+                throw new SQLiteException(SQLiteErrorCode.Constraint, "Layout Id not Registered");
             }
             else
             {
@@ -46,29 +42,29 @@ namespace AlertToCareAPI.Repo
                 _context.SaveChanges();
             }
 
-            
+
 
         }
-        public bool ConfigureBeds(string Icuid,int BedCount)
+        public bool ConfigureBeds(string icuId, int bedCount)
         {
-            string IcuId = Icuid;
+            string icu = icuId;
 
 
-            if(CheckIcuIdAndBedCountIsValid(IcuId,BedCount))
+            if (CheckIcuIdAndBedCountIsValid(icu, bedCount))
             {
                 Bed configurebeds;
 
-                for (int i = 1; i <= BedCount; i++)
+                for (int i = 1; i <= bedCount; i++)
                 {
                     configurebeds = new Bed();
                     configurebeds.BedNo = "B00" + i;
-                    configurebeds.IcuId = IcuId;
+                    configurebeds.IcuId = icu;
                     //configurebeds.IsOccupied = 0;
-                   _context.BedsInfo.Add(configurebeds);
+                    _context.BedsInfo.Add(configurebeds);
                     _context.SaveChanges();
                     //string bedno = "B00" + i;
                     //int status = 0;
-                   // _context.BedsInfo.FromSqlRaw($"INSERT INTO BedsInfo(BedNo,IcuId,IsOccupied) VALUES ({bedno},{IcuId},{status})");
+                    // _context.BedsInfo.FromSqlRaw($"INSERT INTO BedsInfo(BedNo,IcuId,IsOccupied) VALUES ({bedno},{IcuId},{status})");
                     //_context.SaveChanges();
                 }
 
@@ -79,35 +75,35 @@ namespace AlertToCareAPI.Repo
             {
                 return false;
             }
-            
+
         }
-        private bool CheckIcuIdAndBedCountIsValid(string IcuId,int BedCount)
+        private bool CheckIcuIdAndBedCountIsValid(string icuId, int bedCount)
         {
-            var IcuList=_context.IcusInfo.ToList();
+            var IcuList = _context.IcusInfo.ToList();
             try
             {
-                IcuList.First(Icu => Icu.Id == IcuId && Icu.BedCount == BedCount);
+                IcuList.First(Icu => Icu.Id == icuId && Icu.BedCount == bedCount);
                 return true;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return false;
             }
-            
+
 
         }
-        public bool CheckLayoutId(string Layoutid)
+        private bool CheckLayoutId(string layoutid)
         {
-            if (_context.LayoutInfo.Find(Layoutid) != null)
+            if (_context.LayoutInfo.Find(layoutid) != null)
                 return true;
             return false;
         }
 
-      
+
         public IEnumerable<Icu> GetAllIcus()
         {
-            var ICUs = _context.IcusInfo.ToList();
-            return ICUs;
+            var icUs = _context.IcusInfo.ToList();
+            return icUs;
         }
 
         public void RemoveIcu(Icu icu)

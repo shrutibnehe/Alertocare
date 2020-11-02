@@ -33,18 +33,18 @@ namespace AlertToCareUI.Views
             IcuNo = icuid;
         }
         private static readonly HttpClient Client = new HttpClient();
-       
-      /*  public string IcuNo
-        {
-            get;set;
-        }*/
+
+        /*  public string IcuNo
+          {
+              get;set;
+          }*/
 
         private void Admit(object sender, RoutedEventArgs e)
         {
             PatientAdmission();
-            
+
         }
-      
+
 
 
         private void PatientAdmission()
@@ -61,11 +61,11 @@ namespace AlertToCareUI.Views
                 IcuId = IcuNo,
                 ContantNumber = contact.Text
             };
-           
+
             bool response = CheckValidityOfDetails(newPatient);
             if (response == true)
             {
-                
+
                 newPatient.Age = int.Parse(age.Text);
                 AddToDb(newPatient);
 
@@ -79,7 +79,7 @@ namespace AlertToCareUI.Views
 
         private void AddToDb(PatientModel newPatient)
         {
-           
+
             System.Net.HttpWebRequest _httpReq =
                  System.Net.WebRequest.CreateHttp("http://localhost:5000/api/icuoccupancy");
             _httpReq.Method = "POST";
@@ -91,6 +91,14 @@ namespace AlertToCareUI.Views
                 System.Net.HttpWebResponse response = _httpReq.GetResponse() as System.Net.HttpWebResponse;
                 // MessageBox.Show($"{response.StatusCode}");
                 MessageBox.Show("Patient Registered Successfully");
+                id.Text = "";
+                name.Text = "";
+                age.Text = "";
+                bedno.Text = "";
+                //IcuId = icuid.Text,
+                contact.Text = "";
+
+
             }
             catch (Exception)
             {

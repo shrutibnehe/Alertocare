@@ -5,26 +5,26 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AlertToCareUI.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="650" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="530">
     <Grid  HorizontalAlignment="Left" VerticalAlignment="Center">
         <!--BED LAYOUT-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80"></ColumnDefinition>
-            <ColumnDefinition Width="80"></ColumnDefinition>
-            <ColumnDefinition Width="80"></ColumnDefinition>
-            <ColumnDefinition Width="80"></ColumnDefinition>
-            <ColumnDefinition Width="80"></ColumnDefinition>
-            <ColumnDefinition Width="80"></ColumnDefinition>
-            <ColumnDefinition Width="80"></ColumnDefinition>
+            <ColumnDefinition Width="70"></ColumnDefinition>
+            <ColumnDefinition Width="70"></ColumnDefinition>
+            <ColumnDefinition Width="70"></ColumnDefinition>
+            <ColumnDefinition Width="70"></ColumnDefinition>
+            <ColumnDefinition Width="70"></ColumnDefinition>
+            <ColumnDefinition Width="70"></ColumnDefinition>
+            <ColumnDefinition Width="70"></ColumnDefinition>
 
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition Height="110"></RowDefinition>
-            <RowDefinition Height="110"></RowDefinition>
-            <RowDefinition Height="110"></RowDefinition>
-            <RowDefinition Height="110"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
 
         </Grid.RowDefinitions>
         <Button Content="B001" FontSize="16" Grid.Row="0" Grid.Column="0" Margin="10,0,0,0" Click="PatientInfo"></Button>
@@ -38,7 +38,7 @@
         <Button Content="B009" FontSize="16" Grid.Row="3" Grid.Column="6"  Margin="10,10,0,0" Click="PatientInfo"></Button>
         <Button Content="B0010" FontSize="16" Grid.Row="4" Grid.Column="6"  Margin="10,10,0,0" Click="PatientInfo"></Button>
 
-        <TextBlock Text="CENTRAL" FontSize="18" Grid.Row="3" Grid.Column="1"/>
+        <TextBlock Text="CENTRAL" FontSize="16" Grid.Row="3" Grid.Column="1"/>
         <TextBlock Text="AREA" FontSize="20" Grid.Row="3" Grid.Column="3"/>
     </Grid>
 

@@ -54,3 +54,101 @@ C:\Users\320107932\OneDrive - Philips\WPF\AlertToCareUI\AlertToCareUI\obj\Debug\
 C:\Users\320107932\OneDrive - Philips\WPF\AlertToCareUI\AlertToCareUI\bin\Debug\Newtonsoft.Json.dll
 C:\Users\320107932\OneDrive - Philips\WPF\AlertToCareUI\AlertToCareUI\bin\Debug\Newtonsoft.Json.xml
 C:\Users\320107932\OneDrive - Philips\WPF\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.csproj.CopyComplete
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\bin\Debug\AlertToCareUI.exe.config
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\bin\Debug\AlertToCareUI.exe
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\bin\Debug\AlertToCareUI.pdb
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\ICU001_Rectangular_12.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\ICU002_Rectangular_10.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\ICU003_LLayout_12.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\ICU004_LLayout_10.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\MainWindow.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Views\AdmissionAndDischarge.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Views\AlertManagerView.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Views\LLayout_10.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Views\LLayout_12.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Views\Rectangular_10.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Views\Rectangular_12.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU1Beds10Window.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\App.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI_MarkupCompile.cache
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI_MarkupCompile.lref
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\ICU001_Rectangular_12.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\ICU002_Rectangular_10.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\ICU003_LLayout_12.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\ICU004_LLayout_10.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\MainWindow.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Views\AdmissionAndDischarge.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Views\AlertManagerView.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Views\LLayout_10.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Views\LLayout_12.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Views\Rectangular_10.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Views\Rectangular_12.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU1Beds10Window.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.g.resources
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.Properties.Resources.resources
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.csproj.GenerateResource.cache
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.csproj.CoreCompileInputs.cache
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.csproj.CopyComplete
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.exe
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.pdb
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.csprojAssemblyReference.cache
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU1Beds12Window.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU2Beds10Window.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU2Beds12Window.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU1Beds12Window.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU2Beds10Window.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU2Beds12Window.baml
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\FirstWindow.g.cs
+C:\Users\Dell1\source\repos\Alert-To-Care-New\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\FirstWindow.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.csprojAssemblyReference.cache
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\ICU001_Rectangular_12.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\ICU002_Rectangular_10.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\ICU003_LLayout_12.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\ICU004_LLayout_10.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\MainWindow.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Views\AdmissionAndDischarge.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Views\AlertManagerView.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Views\LLayout_10.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Views\LLayout_12.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Views\Rectangular_10.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Views\Rectangular_12.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\FirstWindow.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU1Beds10Window.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU1Beds12Window.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU2Beds10Window.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU2Beds12Window.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\App.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI_MarkupCompile.cache
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI_MarkupCompile.lref
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.exe
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.pdb
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\bin\Debug\AlertToCareUI.exe.config
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\bin\Debug\AlertToCareUI.exe
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\bin\Debug\AlertToCareUI.pdb
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\ICU001_Rectangular_12.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\ICU002_Rectangular_10.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\ICU003_LLayout_12.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\ICU004_LLayout_10.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\MainWindow.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Views\AdmissionAndDischarge.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Views\AlertManagerView.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Views\LLayout_10.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Views\LLayout_12.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Views\Rectangular_10.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Views\Rectangular_12.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\FirstWindow.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU1Beds10Window.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU1Beds12Window.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU2Beds10Window.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\Windows\ICU2Beds12Window.baml
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.g.resources
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.Properties.Resources.resources
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.csproj.GenerateResource.cache
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.csproj.CoreCompileInputs.cache
+C:\Users\320107932\OneDrive - Philips\Merged\Alertocare\AlertToCareUI\AlertToCareUI\obj\Debug\AlertToCareUI.csproj.CopyComplete

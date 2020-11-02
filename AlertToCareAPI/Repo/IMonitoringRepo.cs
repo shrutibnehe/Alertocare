@@ -6,8 +6,10 @@ namespace AlertToCare.Data
 
     public interface IMonitoringRepo
     {
-        public bool CheckVitals(Vital vital);
-        Vital GetVitalsById(string id);
-        public IEnumerable<Vital> GetAllVitals();
+        public IEnumerable<Alert> GetAllActiveAlerts(string icuID);
+        public bool AlertChangeStatus(string id);
+        public void RemoveAlertsOfPatient(string id);
+
+        public bool SaveChanges();
     }
 }

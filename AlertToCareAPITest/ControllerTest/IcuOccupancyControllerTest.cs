@@ -138,5 +138,12 @@ namespace AlertToCareAPITest.ControllerTest
             var NewPatient = occupancyController.RemovePatient("P0109","ICU001");
             Assert.IsType<NotFoundResult>(NewPatient);
         }
+        [Fact]
+        public void TestGetPatientInfo()
+        {
+           var patient= occupancyController.GetPatientInfo("B001", "ICU001");
+            Assert.Equal("P01",patient.Id);
+
+        }
     }
 }

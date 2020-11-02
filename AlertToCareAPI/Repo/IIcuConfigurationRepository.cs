@@ -12,7 +12,7 @@ namespace AlertToCare.Data
         IEnumerable<Icu> GetAllIcus();
         bool SaveChanges();
         IEnumerable<Layout> GetAllLayouts();
-        bool ConfigureBeds(string IcuId,int BedCount);
-        
+        bool ConfigureBeds(string IcuId, int BedCount);
+
     }
 }
