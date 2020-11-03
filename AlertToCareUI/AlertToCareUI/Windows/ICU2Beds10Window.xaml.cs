@@ -25,7 +25,7 @@ namespace AlertToCareUI.Windows
             InitializeComponent();
             AdmissionAndDischarge admission = new AdmissionAndDischarge("ICU002");
             Rectangular_10 rectangle = new Rectangular_10("ICU002");//ICU001
-            AlertManagerView alertManagerView = new AlertManagerView("ICU002");
+            //AlertManagerView alertManagerView = new AlertManagerView("ICU002");
         }
     }
 }

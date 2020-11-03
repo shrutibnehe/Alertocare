@@ -4,38 +4,68 @@ using Xunit;
 using Microsoft.AspNetCore.Mvc;
 using AlertToCare.Data;
 using Moq;
+using AlertToCareAPITest.RepoTest;
+using AlertToCareAPI.Repo;
 
 namespace AlertToCareAPITest.ControllerTest
 {
-   /* public class PatientsMontoringControllerTest
+   public class PatientsMontoringControllerTest : InMemoryContext
     {
-        readonly ISudoMonitornigRepo operations = new ISudoMonitornigRepo();
-        private readonly Mock<IMonitoringRepo> _MockRepo;
-
-        private readonly PatientsMonitoringController PatientMonitorController;
+        private readonly IMonitoringRepo _monitoringRepo;
+        private readonly PatientsMonitoringController _patientsMonitoringController;
 
         public PatientsMontoringControllerTest()
         {
-            _MockRepo = new Mock<IMonitoringRepo>();
-            PatientMonitorController = new PatientsMonitoringController(_MockRepo.Object);
+            _monitoringRepo = new MonitorinRepository(Context);
+            _patientsMonitoringController = new PatientsMonitoringController(_monitoringRepo);
         }
-        [Fact]
-        public void CheckVitalsAreGettingOrNotWhenIdIsGiven()
-        {
-            PatientsMonitoringController controller = new PatientsMonitoringController(operations);
-            var actualResponse = controller.CheckVitalsById("P03");
-            var okResult = actualResponse.Result as OkObjectResult;
-            // Assert
 
-            Assert.Null(okResult);
-            //Assert.Equal(200, okResult.StatusCode);
-        }
-        [Fact]
-        public void TestwhethergettingListOfVitalsOrNot()
+        [Theory]
+        [InlineData("ICU001")]
+        public void TestGetAllAlertsWhenICUIDIsValid(string icuID)
         {
-
-            var _Controller = PatientMonitorController.GetVitals();
-            Assert.NotNull(_Controller);
+            var alertList = _patientsMonitoringController.GetAlerts(icuID);
+            Assert.IsType<OkObjectResult>(alertList);
         }
-    }*/
+
+        [Theory]
+        [InlineData("ABC456")]
+        public void TestGetAllAlertsWhenICUIDIsInvalid(string icuID)
+        {
+            var alertList = _patientsMonitoringController.GetAlerts(icuID);
+            Assert.IsType<OkObjectResult>(alertList);
+        }
+
+        [Fact]
+        public void TestAlertStatusChange()
+        {
+            string alertId = "AL002";
+            var IsStatusChanged = _patientsMonitoringController.ChangeStatusOfAlert(alertId);
+            Assert.IsType<OkObjectResult>(IsStatusChanged);
+        }
+
+        [Fact]
+        public void TestDeleteAlertForPatientID()
+        {
+            string patID = "P02";
+            var IsPatientDeleted = _patientsMonitoringController.RemoveAlertOfDischargedPat(patID);
+            Assert.IsType<OkObjectResult>(IsPatientDeleted);
+        }
+
+        [Fact]
+        public void TestGetUnOccupiedBedsWhenValidICUID()
+        {
+            string icuId = "ICU001";
+            var bedsList = _patientsMonitoringController.GetUnoccupiedBeds(icuId);
+            Assert.IsType<OkObjectResult>(bedsList);
+        }
+
+        [Fact]
+        public void TestGetUnOccupiedBedsWhenInvalidIcuId()
+        {
+            string icuId = "ICU002";
+            var bedsList = _patientsMonitoringController.GetUnoccupiedBeds(icuId);
+            Assert.IsType<BadRequestObjectResult>(bedsList);
+        }
+    }
 }

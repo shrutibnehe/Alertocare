@@ -59,19 +59,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ICU001_Rectangular_12.xaml.cs">
-      <DependentUpon>ICU001_Rectangular_12.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ICU002_Rectangular_10.xaml.cs">
-      <DependentUpon>ICU002_Rectangular_10.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ICU003_LLayout_12.xaml.cs">
-      <DependentUpon>ICU003_LLayout_12.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ICU004_LLayout_10.xaml.cs">
-      <DependentUpon>ICU004_LLayout_10.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Models\Alert.cs" />
+    <Compile Include="Models\Bed.cs" />
     <Compile Include="Models\PatientModel.cs" />
     <Compile Include="ServiceAccessPoint\RequestHandler.cs" />
     <Compile Include="ViewModel\AlertManagerViewModel.cs" />
@@ -108,22 +97,6 @@
     <Compile Include="Windows\ICU2Beds12Window.xaml.cs">
       <DependentUpon>ICU2Beds12Window.xaml</DependentUpon>
     </Compile>
-    <Page Include="ICU001_Rectangular_12.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ICU002_Rectangular_10.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ICU003_LLayout_12.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ICU004_LLayout_10.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

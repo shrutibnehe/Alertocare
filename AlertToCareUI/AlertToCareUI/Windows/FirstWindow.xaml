@@ -6,8 +6,11 @@
         xmlns:local="clr-namespace:AlertToCareUI.Windows"
         mc:Ignorable="d"
         Title="FirstWindow" Height="450" Width="800">
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+    <StackPanel VerticalAlignment="Center">
+        <Label Content="Welcome To Philips ICU Manager - Alert to Care" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" FontSize="20" FontWeight="Bold" />
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
@@ -15,8 +18,13 @@
             <ColumnDefinition Width="auto"></ColumnDefinition>
             <ColumnDefinition Width="auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ComboBox Margin="5" Width="100" Height="50"  Grid.Row="0" Name="LayoutSelector" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <ComboBox Margin="5" Width="100" Height="50"  Grid.Column="1" Name="NoOfBedSelector" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button Click="SelectLayout_Click" Margin="5" Grid.ColumnSpan="2" Height="50" Width="200" Content="Select Layout" Grid.Row="1" Name="SelectLayout" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
+        <Label Content="Select Layout" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label Content="Select No of Beds" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ComboBox Margin="5" Width="100" Height="30"  Grid.Row="0" Grid.Column="1" Name="LayoutSelector" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <ComboBox Margin="5" Width="100" Height="30" Grid.Row="1" Grid.Column="1" Name="NoOfBedSelector" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Click="SelectLayout_Click" Margin="5" Grid.ColumnSpan="2" Height="30" Width="200" Content="Configure Layout" Grid.Row="2" Name="SelectLayout" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
+        <Label Content="Note - This Configuration can be done only once." HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10"/>
+    </StackPanel>
 </Window>

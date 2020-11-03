@@ -1,10 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using AlertToCareUI.Models;
@@ -14,45 +12,110 @@ namespace AlertToCareUI.ServiceAccessPoint
 {
     class RequestHandler
     {
+        static string icuID;
         public async Task GetAlerts(AlertManagerViewModel alertContext)
         {
-           // string icuID = alertContext.ICUID;
-            string icuID = "ICU001";
+            icuID = alertContext.ICUID;
+            //string icuID = "ICU001";
 
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:5000/");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage responseMessage = await client.GetAsync("api/patientsmonitoring/ICU001");
-            if (responseMessage.IsSuccessStatusCode)
-            {
-                var jsonContent = responseMessage.Content.ReadAsStringAsync().Result;
-                alertContext.ListOfAlerts = JsonConvert.DeserializeObject<List<Alert>>(jsonContent);
-                //MessageBox.Show(alertContext.ListOfAlerts.Count.ToString());
 
-            }
-            else
+            try
             {
-                MessageBox.Show("response not as expected");
+                HttpResponseMessage responseMessage = await client.GetAsync($"api/patientsmonitoring/{icuID}");
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    var jsonContent = responseMessage.Content.ReadAsStringAsync().Result;
+                    alertContext.ListOfAlerts = JsonConvert.DeserializeObject<List<Alert>>(jsonContent);
+                }
+                else
+                {
+                    MessageBox.Show("No Alerts. \nIf it is wrong message then call Philips");
+                }
             }
+            catch
+            {
+                MessageBox.Show("Error in Connection");
+            }
+            
         }
         public async Task ChangeAlertStatus(string id, AlertManagerViewModel alertContext)
         {
-            string icuID = alertContext.ICUID;
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:5001/");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage responseMessage = await client.GetAsync($"api/patientsmonitoring/{icuID}/{id}");
-            if (responseMessage.IsSuccessStatusCode)
+            try
             {
-                MessageBox.Show("Alerts Status is Changed");
-                await GetAlerts(alertContext);
-
+                HttpResponseMessage responseMessage = await client.GetAsync($"api/patientsmonitoring/disable/{id}");
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Alerts Status is Changed");
+                    //await GetAlerts(alertContext);
+                }
+                else
+                {
+                    MessageBox.Show("ID may be wrong, Please check if the alert is still there.");
+                    //await GetAlerts(alertContext);
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("response not as expected, ID may be wrong");
+                MessageBox.Show("Error in Connection");
+            }
+           
+        }
+        public async Task DeleteAlertsOnDischarge(string patientId)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:5001/");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            try
+            {
+                HttpResponseMessage responseMessage = await client.DeleteAsync($"api/patientsmonitoring/{patientId}");
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Alerts for Discharged Patients removed");
+                }
+                else
+                {
+                    MessageBox.Show("Alerts not deleted for discharged patients");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error in Connection");
             }
 
         }
+        /*public async Task GetUnoccupiedBeds(AlertManagerViewModel alertContext)
+        {
+            string icuID = alertContext.ICUID;
+            //string icuID = "ICU001";
+
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:5000/");
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            try
+            {
+                HttpResponseMessage responseMessage = await client.GetAsync($"api/patientsmonitoring/Unoccbed/{icuID}");
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    var jsonContent = responseMessage.Content.ReadAsStringAsync().Result;
+                    alertContext.UnoccupiedBeds = JsonConvert.DeserializeObject<List<Bed>>(jsonContent);
+                }
+                else
+                {
+                    MessageBox.Show("ICU is Full :\n If not so -Problem in installation. Call Philips.");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error in Connection");
+            }
+            
+        }*/
+
     }
 }

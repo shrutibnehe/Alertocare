@@ -8,8 +8,8 @@ namespace AlertToCare.Data
     {
         public IEnumerable<Alert> GetAllActiveAlerts(string icuID);
         public bool AlertChangeStatus(string id);
-        public void RemoveAlertsOfPatient(string id);
-
+        public bool RemoveAlertsOfPatient(string id);
+        public IEnumerable<Bed> GetAllUnOccupiedBeds(string icuID);
         public bool SaveChanges();
     }
 }

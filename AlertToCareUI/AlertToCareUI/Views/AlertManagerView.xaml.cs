@@ -1,20 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using AlertToCareUI.Models;
 using AlertToCareUI.ViewModel;
 using AlertToCareUI.ServiceAccessPoint;
+using System.Collections.Generic;
 
 namespace AlertToCareUI.Views
 {
@@ -31,28 +20,35 @@ namespace AlertToCareUI.Views
             this.DataContext = alertManagerContext;
             GetContinuousAlerts();
         }
-        public AlertManagerView(string Icuid)
+        /*public AlertManagerView(string Icuid)
         {
-
             InitializeComponent();
             alertManagerContext.ICUID = Icuid;
             this.DataContext = alertManagerContext;
             GetContinuousAlerts();
-        }
+        }*/
 
         private async void GetContinuousAlerts()
         {
-            while (true)
-            { 
-                await requestHandlerObj.GetAlerts(alertManagerContext);
-                await Task.Delay(5000);
-                
+            try
+            {
+                cmbICU.ItemsSource = new List<string> { "ICU001", "ICU002", "ICU003", "ICU004" };
+                while (cmbICU.SelectedItem!=null)
+                {
+                    alertManagerContext.ICUID = cmbICU.SelectedItem.ToString();
+                    await requestHandlerObj.GetAlerts(alertManagerContext);
+                    await Task.Delay(5000);
+                }
+            }
+            catch
+            {
+                 MessageBox.Show("Check Connection with Server. Make Sure It's ON.");
             }
         }
 
         private void cmbBeds_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(cmbBeds.SelectedItem !=null)
+            if(cmbBeds.SelectedItem !=null && cmbBeds.SelectedItem.ToString()!= "Loading Beds")
             {
                 alertManagerContext.PopulateAlertsOnSelectedBed(cmbBeds.SelectedItem.ToString());
             }
@@ -60,7 +56,7 @@ namespace AlertToCareUI.Views
 
         private void cmbAlerts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (cmbAlerts.SelectedItem != null)
+            if (cmbAlerts.SelectedItem != null && cmbBeds.SelectedItem.ToString() != "Loading Alerts")
             {
                 alertManagerContext.PopulateDisplayMessage(cmbAlerts.SelectedItem.ToString());
             }
@@ -74,6 +70,11 @@ namespace AlertToCareUI.Views
         private async void btnUndoDisable_Click(object sender, RoutedEventArgs e)
         {
             await requestHandlerObj.ChangeAlertStatus(cmbAlerts.Text, alertManagerContext);
+        }
+
+        private void cmbICU_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            GetContinuousAlerts();
         }
     }
 }

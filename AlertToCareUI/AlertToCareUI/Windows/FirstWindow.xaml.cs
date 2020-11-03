@@ -20,7 +20,6 @@ namespace AlertToCareUI.Windows
     /// </summary>
     public partial class FirstWindow : Window
     {
-        AlertManagerViewModel alertContext = new AlertManagerViewModel();
         public FirstWindow()
         {
             InitializeComponent();
@@ -43,35 +42,34 @@ namespace AlertToCareUI.Windows
         }
         private void LayoutOneandOpenNextWindow()
         {
-            ICU1Beds10Window obj1 = new ICU1Beds10Window();
-            ICU1Beds12Window obj2 = new ICU1Beds12Window();
-            
             if (NoOfBedSelector.SelectedItem.ToString() == "10")
             {
-                alertContext.ICUID = "ICU004";
+                //string ICUID = "ICU004";
+                ICU1Beds10Window obj1 = new ICU1Beds10Window();
                 obj1.Show();
                 this.Close();
             }
             else
             {
-                alertContext.ICUID = "ICU003";
+                //string ICUID = "ICU003";
+                ICU1Beds12Window obj2 = new ICU1Beds12Window();
                 obj2.Show();
                 this.Close();
             }
         }
         private void LayoutTwoandOpenNextWindow()
         {
-            ICU2Beds12Window obj4 = new ICU2Beds12Window();
-            ICU2Beds10Window obj3 = new ICU2Beds10Window();
             if (NoOfBedSelector.SelectedItem.ToString() == "10")
             {
-                alertContext.ICUID = "ICU002";
+                //string ICUID = "ICU002";
+                ICU2Beds10Window obj3 = new ICU2Beds10Window();
                 obj3.Show();
                 this.Close();
             }
             else
             {
-                alertContext.ICUID = "ICU001";
+                //string ICUID = "ICU001";
+                ICU2Beds12Window obj4 = new ICU2Beds12Window();
                 obj4.Show();
                 this.Close();
             }

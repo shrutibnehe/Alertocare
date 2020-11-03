@@ -93,6 +93,17 @@ namespace AlertToCareAPITest.RepoTest
                 RespRate = 111
             };
             context.Add(_Vitals);
+
+            var _alerts = new Alert
+            {
+                Id = "AL002",
+                PatientId = "P02",
+                Message = "BPM is high",
+                BedId = "B002",
+                IcuId = "ICU001",
+                IsActive = 1
+            };
+            context.Add(_alerts);
             context.SaveChanges();
         }
         public void Dispose()
